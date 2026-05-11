@@ -1519,7 +1519,7 @@ export default function Portfolio() {
           <FadeIn delay={0.35}>
             <p style={{ fontSize:"clamp(14px,1.8vw,18px)", color:sub, maxWidth:580, margin:"0 auto 44px", lineHeight:1.85 }}>
               Passionate software engineering student focused on building <span style={{ color:accent, fontWeight:600 }}>Real World Applications</span> and learning modern technologies. Designing{" "}
-              <span style={{ color:"#a855f7", fontWeight:600 }}>Full Stack Solutions with DevOps Practices</span>. for scalable deployment—turning complex problems into impactful solutions.
+              <span style={{ color:"#a855f7", fontWeight:600 }}>Full Stack Solutions with DevOps Practices</span>. for scalable deployment turning complex problems into impactful solutions.
             </p>
           </FadeIn>
 
@@ -1618,7 +1618,7 @@ export default function Portfolio() {
                 <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
                   {[
                     { k:"Focus", v:"Full Stack + DevOps" },
-                    { k:"Status", v:"Open to Work ✓" },
+                    { k:"Status", v:"Open to Work" },
                     { k:"Degree", v:"B. SE Honours" },
                     { k:"GPA", v:"Calculating" },
                   ].map(r => (
