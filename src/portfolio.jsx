@@ -722,6 +722,7 @@ function FloatingSkillsSection({ dark, sub, accent, border }) {
 
       <FadeIn delay={0.1}>
         <div
+          className="skills-globe-wrap"
           ref={wrapRef}
           style={{
             height: 560,
@@ -837,7 +838,7 @@ function CertificationsSection({ dark, sub, accent, border, txt, bg }) {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 280px), 1fr))",
           gap: 20,
         }}
       >
@@ -1369,6 +1370,12 @@ export default function Portfolio() {
           .hide-sm { display:none !important; }
           .show-sm { display:flex !important; }
           body { cursor:auto; }
+          .resume-layout { grid-template-columns:1fr !important; gap:24px !important; }
+          .skills-globe-wrap { height:460px !important; border-radius:24px !important; }
+        }
+        @media(max-width:480px) {
+          .skills-globe-wrap { height:390px !important; border-radius:20px !important; }
+          .brand-surname { display:none; }
         }
         @media(min-width:769px) { .show-sm { display:none !important; } }
 
@@ -1427,7 +1434,7 @@ export default function Portfolio() {
           </div>
           <span style={{ fontWeight:800, fontSize:15, letterSpacing:".06em" }}>
             <span style={{ color:accent }}>MOHOMAD</span>
-            <span style={{ color:txt }}>.SAJID</span>
+            <span className="brand-surname" style={{ color:txt }}>.SAJID</span>
           </span>
         </div>
 
@@ -1527,10 +1534,10 @@ export default function Portfolio() {
 
           <FadeIn delay={0.55}>
             <div style={{ display:"flex", gap:"clamp(24px,4vw,48px)", justifyContent:"center", flexWrap:"wrap" }}>
-              {[["2023","+ Enrollerd",""],["4","+ Projects",""],["3","+ Years Coding"],["2","+ Happy Clients"]].map(([n,s,s2]) => (
+              {[["2023","Enrollerd","", ""],["4","+ Projects","", "+"],["3","+ Years Coding", "", "+"],["2","+ Happy Clients", "", "+"]].map(([n,s,s2,numSuffix]) => (
                 <div key={s} style={{ textAlign:"center", minWidth:70 }}>
                   <div style={{ fontSize:"clamp(28px,4vw,38px)", fontWeight:800, color:accent, fontFamily:"'JetBrains Mono',monospace", lineHeight:1, textShadow:`0 0 20px ${accent}66` }}>
-                    <CountUp target={parseInt(n)} suffix="+" />
+                    <CountUp target={parseInt(n)} suffix={numSuffix} />
                   </div>
                   <div style={{ fontSize:11, color:sub, marginTop:4, fontWeight:600, letterSpacing:".06em", textTransform:"uppercase" }}>{s}{s2&&<><br/>{s2}</>}</div>
                 </div>
@@ -1542,7 +1549,7 @@ export default function Portfolio() {
 
       {/* ── ABOUT ─────────────────────────────── */}
       <section id="about" style={{ padding:"120px clamp(16px,5%,80px)", maxWidth:1200, margin:"0 auto", position:"relative", zIndex:1 }}>
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(320px, 1fr))", gap:64, alignItems:"start" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap:64, alignItems:"start" }}>
           {/* Text */}
           <div>
             <FadeIn>
@@ -1663,7 +1670,7 @@ export default function Portfolio() {
           </div>
         </FadeIn>
 
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(360px, 1fr))", gap:24 }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap:24 }}>
           {filtered.map((p, i) => (
             <FadeIn key={p.name} delay={i * 0.08}>
               <div className="proj-card" style={{ padding:30 }}>
@@ -1738,7 +1745,7 @@ export default function Portfolio() {
             <div style={{ position:"absolute", top:-30, right:-30, width:120, height:120, border:"1px solid rgba(245,158,11,0.15)", borderRadius:"50%", animation:"spin 20s linear infinite" }} />
             <div style={{ position:"absolute", top:-15, right:-15, width:60, height:60, border:"1px solid rgba(245,158,11,0.25)", borderRadius:"50%", animation:"spin 10s linear infinite reverse" }} />
 
-            <div style={{ display:"grid", gridTemplateColumns:"auto 1fr", gap:40, alignItems:"center" }}>
+            <div className="resume-layout" style={{ display:"grid", gridTemplateColumns:"auto 1fr", gap:40, alignItems:"center" }}>
               <div style={{ textAlign:"center" }}>
                 <div style={{ width:90, height:90, borderRadius:20, background:"linear-gradient(135deg,#f59e0b22,#f59e0b44)", border:"1px solid rgba(245,158,11,0.4)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:36 }}>📄</div>
               </div>
@@ -1782,7 +1789,7 @@ export default function Portfolio() {
           </div>
         </FadeIn>
 
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(320px, 1fr))", gap:40 }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap:40 }}>
           <div>
             <FadeIn>
               <div className="sec-label" style={{ color:sub, marginBottom:24 }}>CONTACTS</div>
