@@ -1132,14 +1132,14 @@ export default function Portfolio() {
   const accent = "#00d4ff";
 
   return (
-    <div style={{ fontFamily:"'Syne', 'Poppins', sans-serif", background:bg, minHeight:"100vh", color:txt, overflowX:"hidden" }}>
+    <div style={{ fontFamily:"'Syne', 'Poppins', sans-serif", background:bg, minHeight:"100vh", width:"100%", maxWidth:"100vw", color:txt, overflowX:"hidden", position:"relative" }}>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap');
         *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; overflow-x:hidden; }
-        body { cursor:none; overflow-x:hidden; }
-        #root { overflow-x:hidden; }
+        html { scroll-behavior:smooth; overflow-x:hidden; width:100%; max-width:100%; }
+        body { cursor:none; overflow-x:hidden; width:100%; max-width:100%; margin:0; }
+        #root { overflow-x:hidden; width:100%; max-width:100%; }
         ::-webkit-scrollbar { width:3px; }
         ::-webkit-scrollbar-track { background:transparent; }
         ::-webkit-scrollbar-thumb { background:linear-gradient(#00d4ff,#a855f7); border-radius:2px; }
@@ -1370,6 +1370,8 @@ export default function Portfolio() {
           .hide-sm { display:none !important; }
           .show-sm { display:flex !important; }
           body { cursor:auto; }
+          body { touch-action: pan-y; }
+          nav, section, footer { max-width:100vw; overflow-x:clip; }
           .resume-layout { grid-template-columns:1fr !important; gap:24px !important; }
           .skills-globe-wrap { height:460px !important; border-radius:24px !important; }
         }
