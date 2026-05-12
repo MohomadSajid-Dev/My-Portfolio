@@ -6,17 +6,34 @@ import {
   SiMongodb,
   SiJavascript,
   SiTypescript,
-  SiFastapi,
   SiExpress,
   SiPostgresql,
   SiDocker,
   SiGit,
   SiTailwindcss,
-  SiNextdotjs,
-  SiTensorflow,
-  SiPytorch
+  SiFirebase,
+  SiGithubactions,
+  SiPostman,
+  SiFigma
 } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
+import {
+  FaAws,
+  FaJava,
+  FaHtml5,
+  FaCss3Alt,
+  FaVuejs,
+  FaBootstrap,
+  FaDatabase,
+  FaCloud,
+  FaServer,
+  FaGithub,
+  FaGitAlt,
+  FaCode,
+  FaTools,
+  FaPaintBrush,
+  FaRobot,
+  FaLinux
+} from "react-icons/fa";
 
 /* ─── DATA ─────────────────────────────────────────────────── */
 const NAV = ["Home","About","Skills","Projects","Resume","Certifications","Contact"];
@@ -160,22 +177,48 @@ const CERTIFICATIONS = [
 ];
 
 const GLOBE_TECH = [
-  { name: "React", Icon: SiReact, color: "#61dafb" },
-  { name: "Python", Icon: SiPython, color: "#60a5fa" },
-  { name: "Node.js", Icon: SiNodedotjs, color: "#22c55e" },
-  { name: "MongoDB", Icon: SiMongodb, color: "#22c55e" },
+  { name: "Java", Icon: FaJava, color: "#f59e0b" },
   { name: "JavaScript", Icon: SiJavascript, color: "#facc15" },
   { name: "TypeScript", Icon: SiTypescript, color: "#38bdf8" },
-  { name: "FastAPI", Icon: SiFastapi, color: "#06b6d4" },
+  { name: "Python", Icon: SiPython, color: "#60a5fa" },
+  { name: "HTML5", Icon: FaHtml5, color: "#fb7185" },
+  { name: "CSS3", Icon: FaCss3Alt, color: "#0ea5e9" },
+  { name: "React", Icon: SiReact, color: "#61dafb" },
+  { name: "Vue.js", Icon: FaVuejs, color: "#34d399" },
+  { name: "Node.js", Icon: SiNodedotjs, color: "#22c55e" },
   { name: "Express", Icon: SiExpress, color: "#cbd5e1" },
+  { name: "TailwindCSS", Icon: SiTailwindcss, color: "#22d3ee" },
+  { name: "Bootstrap", Icon: FaBootstrap, color: "#a78bfa" },
+  { name: "MongoDB", Icon: SiMongodb, color: "#22c55e" },
   { name: "PostgreSQL", Icon: SiPostgresql, color: "#60a5fa" },
-  { name: "Docker", Icon: SiDocker, color: "#38bdf8" },
+  { name: "MySQL", Icon: FaDatabase, color: "#38bdf8" },
+  { name: "Firebase", Icon: SiFirebase, color: "#f59e0b" },
+  { name: "Cloudinary", Icon: FaCloud, color: "#0ea5e9" },
+  { name: "REST APIs", Icon: FaServer, color: "#14b8a6" },
   { name: "AWS", Icon: FaAws, color: "#f59e0b" },
+  { name: "Vercel", Icon: FaCode, color: "#e2e8f0" },
+  { name: "Render", Icon: FaCode, color: "#c084fc" },
+  { name: "Neon", Icon: FaCode, color: "#22d3ee" },
+  { name: "Docker", Icon: SiDocker, color: "#38bdf8" },
+  { name: "GitHub Actions", Icon: SiGithubactions, color: "#818cf8" },
   { name: "Git", Icon: SiGit, color: "#f97316" },
-  { name: "Tailwind", Icon: SiTailwindcss, color: "#22d3ee" },
-  { name: "Next.js", Icon: SiNextdotjs, color: "#f8fafc" },
-  { name: "TensorFlow", Icon: SiTensorflow, color: "#fb923c" },
-  { name: "PyTorch", Icon: SiPytorch, color: "#ef4444" }
+  { name: "GitHub", Icon: FaGithub, color: "#e2e8f0" },
+  { name: "VS Code", Icon: FaCode, color: "#38bdf8" },
+  { name: "IntelliJ IDEA", Icon: FaCode, color: "#f472b6" },
+  { name: "Eclipse", Icon: FaCode, color: "#a78bfa" },
+  { name: "Android Studio", Icon: FaCode, color: "#4ade80" },
+  { name: "Postman", Icon: SiPostman, color: "#fb923c" },
+  { name: "Figma", Icon: SiFigma, color: "#f472b6" },
+  { name: "Canva", Icon: FaPaintBrush, color: "#22d3ee" },
+  { name: "Photoshop", Icon: FaPaintBrush, color: "#60a5fa" },
+  { name: "Selenium", Icon: FaTools, color: "#10b981" },
+  { name: "JMeter", Icon: FaTools, color: "#fbbf24" },
+  { name: "Linux", Icon: FaLinux, color: "#facc15" },
+  { name: "GitHub Copilot", Icon: FaRobot, color: "#a3e635" },
+  { name: "ChatGPT", Icon: FaRobot, color: "#34d399" },
+  { name: "Claude", Icon: FaRobot, color: "#f59e0b" },
+  { name: "Cursor", Icon: FaCode, color: "#67e8f9" },
+  { name: "Perplexity", Icon: FaCode, color: "#22d3ee" }
 ];
 
 /* ─── HOOKS ─────────────────────────────────────────────────── */
