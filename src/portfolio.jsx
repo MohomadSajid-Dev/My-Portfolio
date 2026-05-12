@@ -189,39 +189,6 @@ function useIntersection(ref, threshold = 0.15) {
   return visible;
 }
 
-function useScrollDirection() {
-  const [direction, setDirection] = useState("down");
-
-  useEffect(() => {
-    let lastY = window.scrollY;
-    let raf = 0;
-
-    const update = () => {
-      const currentY = window.scrollY;
-      const delta = currentY - lastY;
-
-      if (Math.abs(delta) > 4) {
-        setDirection(delta > 0 ? "down" : "up");
-        lastY = currentY;
-      }
-
-      raf = 0;
-    };
-
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      if (raf) cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-
-  return direction;
-}
-
 function useActiveSection() {
   const [active, setActive] = useState("Home");
   useEffect(() => {
@@ -352,16 +319,11 @@ function ScanLine() {
   );
 }
 
-function FadeIn({ children, delay = 0, className = "", style = {} }) {
-  const ref = useRef(null);
-  const visible = useIntersection(ref);
-  const direction = useScrollDirection();
+function FadeIn({ children, className = "", style = {} }) {
   return (
-    <div ref={ref} className={className} style={{
-      opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : `translateY(${direction === "down" ? "32px" : "-32px"})`,
-      transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
-      willChange: "opacity, transform",
+    <div className={className} style={{
+      opacity: 1,
+      transform: "none",
       ...style,
     }}>
       {children}
