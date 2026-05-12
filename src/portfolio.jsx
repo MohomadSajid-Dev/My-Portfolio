@@ -1392,37 +1392,13 @@ export default function Portfolio() {
           body { touch-action: pan-y; }
           nav, section:not(#home), footer { max-width:100vw; overflow-x:clip; }
           #home { max-width: 100%; }
-          .hero-name {
-            font-size: clamp(22px, 6.2vw + 0.2rem, 52px);
-            letter-spacing: -0.01em;
-            line-height: 1.08;
-            width: 100%;
-            max-width: 100%;
-            padding-inline: clamp(6px, 2.8vw, 14px);
-            text-wrap: balance;
-            overflow-wrap: anywhere;
-            word-break: break-word;
-          }
-          .hero-intro {
-            width: min(100%, 92vw);
-            margin-left: auto;
-            margin-right: auto;
-          }
+          .hero-name { font-size: clamp(24px, 7.2vw + 0.35rem, 72px); letter-spacing: -0.02em; }
           .resume-layout { grid-template-columns:1fr !important; gap:24px !important; }
           .skills-globe-wrap { height:460px !important; border-radius:24px !important; }
         }
         @media(max-width:480px) {
           .skills-globe-wrap { height:390px !important; border-radius:20px !important; }
           .brand-surname { display:none; }
-          #home {
-            padding-left: max(env(safe-area-inset-left, 0px), 14px);
-            padding-right: max(env(safe-area-inset-right, 0px), 14px);
-          }
-          .hero-name {
-            font-size: clamp(20px, 8.2vw, 38px);
-            letter-spacing: 0;
-            padding-inline: clamp(4px, 2vw, 10px);
-          }
         }
         @media(min-width:769px) { .show-sm { display:none !important; } }
 
@@ -1524,7 +1500,7 @@ export default function Portfolio() {
         <div className="animate-spin" style={{ position:"absolute", width:600, height:600, border:"1px dashed rgba(0,212,255,0.06)", borderRadius:"50%", pointerEvents:"none" }} />
         <div style={{ position:"absolute", width:400, height:400, border:"1px solid rgba(168,85,247,0.05)", borderRadius:"50%", pointerEvents:"none", animation:"spin 12s linear infinite reverse" }} />
 
-        <div className="hero-intro" style={{ position:"relative", zIndex:10, maxWidth:860, width:"100%", minWidth:0, marginLeft:"auto", marginRight:"auto", textAlign:"center", boxSizing:"border-box" }}>
+        <div style={{ position:"relative", zIndex:10, maxWidth:860, width:"100%", minWidth:0, marginLeft:"auto", marginRight:"auto", textAlign:"center", boxSizing:"border-box" }}>
           <FadeIn delay={0}>
             <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:D?"rgba(16,185,129,0.08)":"rgba(16,185,129,0.1)", border:"1px solid rgba(16,185,129,0.25)", borderRadius:50, padding:"7px 20px", marginBottom:32, fontSize:12, fontWeight:700 }}>
               <span className="status-dot" />
