@@ -1132,14 +1132,14 @@ export default function Portfolio() {
   const accent = "#00d4ff";
 
   return (
-    <div style={{ fontFamily:"'Syne', 'Poppins', sans-serif", background:bg, minHeight:"100vh", width:"100%", maxWidth:"100vw", color:txt, overflowX:"hidden", position:"relative" }}>
+    <div style={{ fontFamily:"'Syne', 'Poppins', sans-serif", background:bg, minHeight:"100vh", color:txt, overflowX:"hidden" }}>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap');
         *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; overflow-x:hidden; width:100%; max-width:100%; }
-        body { cursor:none; overflow-x:hidden; width:100%; max-width:100%; margin:0; }
-        #root { overflow-x:hidden; width:100%; max-width:100%; }
+        html { scroll-behavior:smooth; overflow-x:hidden; }
+        body { cursor:none; overflow-x:hidden; }
+        #root { overflow-x:hidden; }
         ::-webkit-scrollbar { width:3px; }
         ::-webkit-scrollbar-track { background:transparent; }
         ::-webkit-scrollbar-thumb { background:linear-gradient(#00d4ff,#a855f7); border-radius:2px; }
@@ -1161,14 +1161,11 @@ export default function Portfolio() {
         }
 
         .hero-name {
-          font-size:clamp(26px,8vw,88px); font-weight:800; line-height:1.05; letter-spacing:-.02em;
-          overflow-wrap:anywhere; word-break:break-word; hyphens:auto;
-          max-width:100%;
+          font-size:clamp(44px,8vw,88px); font-weight:800; line-height:1.0; letter-spacing:-.03em;
           background:linear-gradient(135deg, #ffffff 0%, #67e8f9 40%, #a855f7 75%, #ec4899 100%);
           background-size:300% 300%;
           animation:gradShift 6s ease infinite;
           -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-          padding-inline:2px;
         }
         @keyframes gradShift {
           0%,100% { background-position:0% 50%; }
@@ -1369,30 +1366,10 @@ export default function Portfolio() {
           background-size:80px 80px;
         }
 
-        #home {
-          padding: 80px max(env(safe-area-inset-right, 0px), clamp(16px, 5vw, 80px)) 60px max(env(safe-area-inset-left, 0px), clamp(16px, 5vw, 80px));
-          overflow-x: visible;
-          overflow-y: visible;
-        }
-
-        .hero-tagline {
-          max-width: 100%;
-          min-width: 0;
-          margin-left: auto;
-          margin-right: auto;
-          padding-inline: clamp(4px, 2vw, 12px);
-          overflow-wrap: anywhere;
-          word-break: break-word;
-        }
-
         @media(max-width:768px) {
           .hide-sm { display:none !important; }
           .show-sm { display:flex !important; }
           body { cursor:auto; }
-          body { touch-action: pan-y; }
-          nav, section:not(#home), footer { max-width:100vw; overflow-x:clip; }
-          #home { max-width: 100%; }
-          .hero-name { font-size: clamp(24px, 7.2vw + 0.35rem, 72px); letter-spacing: -0.02em; }
           .resume-layout { grid-template-columns:1fr !important; gap:24px !important; }
           .skills-globe-wrap { height:460px !important; border-radius:24px !important; }
         }
@@ -1494,13 +1471,13 @@ export default function Portfolio() {
       )}
 
       {/* ── HERO ─────────────────────────────── */}
-      <section id="home" style={{ position:"relative", minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center", overflowX:"visible", overflowY:"hidden" }}>
+      <section id="home" style={{ position:"relative", minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center", padding:"80px clamp(16px,5%,80px) 60px", overflow:"hidden" }}>
         <HexGrid />
 
         <div className="animate-spin" style={{ position:"absolute", width:600, height:600, border:"1px dashed rgba(0,212,255,0.06)", borderRadius:"50%", pointerEvents:"none" }} />
         <div style={{ position:"absolute", width:400, height:400, border:"1px solid rgba(168,85,247,0.05)", borderRadius:"50%", pointerEvents:"none", animation:"spin 12s linear infinite reverse" }} />
 
-        <div style={{ position:"relative", zIndex:10, maxWidth:860, width:"100%", minWidth:0, marginLeft:"auto", marginRight:"auto", textAlign:"center", boxSizing:"border-box" }}>
+        <div style={{ position:"relative", zIndex:10, maxWidth:860, textAlign:"center" }}>
           <FadeIn delay={0}>
             <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:D?"rgba(16,185,129,0.08)":"rgba(16,185,129,0.1)", border:"1px solid rgba(16,185,129,0.25)", borderRadius:50, padding:"7px 20px", marginBottom:32, fontSize:12, fontWeight:700 }}>
               <span className="status-dot" />
@@ -1516,7 +1493,7 @@ export default function Portfolio() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div className="hero-tagline" style={{ fontSize:"clamp(15px,2.35vw,22px)", fontWeight:500, color:sub, marginBottom:24, letterSpacing:".03em", lineHeight:1.55 }}>
+            <div style={{ fontSize:"clamp(16px,2.5vw,22px)", fontWeight:500, color:sub, marginBottom:24, letterSpacing:".04em" }}>
               <span className="mono" style={{ color:accent }}>{">"}</span>
               {" "}
               <TypeWriter
@@ -1538,7 +1515,7 @@ export default function Portfolio() {
           </FadeIn>
 
           <FadeIn delay={0.35}>
-            <p style={{ fontSize:"clamp(14px,1.8vw,18px)", color:sub, maxWidth:580, width:"100%", minWidth:0, margin:"0 auto 44px", lineHeight:1.85, paddingInline:"clamp(2px, 1.5vw, 8px)", boxSizing:"border-box", overflowWrap:"anywhere" }}>
+            <p style={{ fontSize:"clamp(14px,1.8vw,18px)", color:sub, maxWidth:580, margin:"0 auto 44px", lineHeight:1.85 }}>
               Passionate software engineering student focused on building <span style={{ color:accent, fontWeight:600 }}>Real World Applications</span> and learning modern technologies. Designing{" "}
               <span style={{ color:"#a855f7", fontWeight:600 }}>Full Stack Solutions with DevOps Practices</span>. for scalable deployment—turning complex problems into impactful solutions.
             </p>
