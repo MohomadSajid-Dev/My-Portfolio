@@ -1808,10 +1808,10 @@ export default function Portfolio() {
 
             <div style={{ marginTop:36, paddingTop:28, borderTop:`1px solid ${border}`, display:"flex", gap:14, flexWrap:"wrap", justifyContent:"center" }}>
               <a href={`${process.env.PUBLIC_URL}/my-cv.pdf`} download="My CV.pdf" style={{ textDecoration:"none" }}>
-                <button className="btn-primary" style={{ fontSize:14, padding:"14px 36px" }}>⬇ Download CV (PDF)</button>
+                <button className="btn-primary" style={{ fontSize:14, padding:"14px 36px" }}>Download CV (PDF)</button>
               </a>
               <button className="btn-ghost" style={{ borderColor:"rgba(245,158,11,.35)", color:"#f59e0b", fontSize:14, padding:"14px 36px" }} onClick={() => scrollTo("Contact")}>
-                💬 Schedule a Call
+                Schedule a Call
               </button>
             </div>
           </GlowCard>
@@ -1964,7 +1964,7 @@ export default function Portfolio() {
         </div>
         <div style={{ borderTop:`1px solid ${border}`, paddingTop:24, display:"flex", flexWrap:"wrap", gap:16, alignItems:"center", justifyContent:"space-between" }}>
           <div className="mono" style={{ fontSize:11, color:sub }}>© {new Date().getFullYear()} Mohomad Sajid · All rights reserved</div>
-          <div className="mono" style={{ fontSize:11, color:sub }}>Designed & built with ⚡ · React · Syne</div>
+          <div className="mono" style={{ fontSize:11, color:sub }}> · Code with purpose · Build with passion</div>
           <div style={{ display:"flex", alignItems:"center", gap:6 }}>
             <span className="status-dot" />
             <span className="mono" style={{ fontSize:11, color:"#10b981" }}>All systems operational</span>
