@@ -1794,7 +1794,7 @@ export default function Portfolio() {
               </div>
               <div>
                 <h3 style={{ fontWeight:800, fontSize:22, color:txt, marginBottom:8 }}>Mohomad Sajid</h3>
-                <div className="mono" style={{ fontSize:12, color:"#f59e0b", marginBottom:16 }}>Software Engineering Undergraduate · Full Stack Developer · DevOps Enthusiast</div>
+                <div className="mono" style={{ fontSize:12, color:"#f59e0b", marginBottom:16 }}>Software Engineering Undergraduate · Full Stack Developer · DevOps Practices</div>
                 <p style={{ color:sub, fontSize:14, lineHeight:1.8, marginBottom:20 }}>
                   Passionate about building scalable web applications and integrating modern technologies. Seeking an internship to gain industry experience and contribute meaningfully to a professional team.
                 </p>
