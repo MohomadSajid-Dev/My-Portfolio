@@ -1807,7 +1807,7 @@ export default function Portfolio() {
             </div>
 
             <div style={{ marginTop:36, paddingTop:28, borderTop:`1px solid ${border}`, display:"flex", gap:14, flexWrap:"wrap", justifyContent:"center" }}>
-              <a href={`${process.env.PUBLIC_URL}/cv.pdf`} download="Mohomad-Sajid-CV.pdf" style={{ textDecoration:"none" }}>
+              <a href={`${process.env.PUBLIC_URL}/my-cv.pdf`} download="My CV.pdf" style={{ textDecoration:"none" }}>
                 <button className="btn-primary" style={{ fontSize:14, padding:"14px 36px" }}>⬇ Download CV (PDF)</button>
               </a>
               <button className="btn-ghost" style={{ borderColor:"rgba(245,158,11,.35)", color:"#f59e0b", fontSize:14, padding:"14px 36px" }} onClick={() => scrollTo("Contact")}>
@@ -1944,12 +1944,13 @@ export default function Portfolio() {
               {[
                 { label: "GitHub Profile", href: "https://github.com/MohomadSajid-Dev" },
                 { label: "LinkedIn", href: "https://www.linkedin.com/in/mohomadsajid" },
-                { label: "Download CV", href: `${process.env.PUBLIC_URL}/cv.pdf` },
+                { label: "Download CV", href: `${process.env.PUBLIC_URL}/my-cv.pdf`, download: "My CV.pdf" },
                 { label: "Schedule Call", href: "#contact" },
               ].map((l) => (
                 <a
                   key={l.label}
                   href={l.href}
+                  download={l.download}
                   target={l.href.startsWith("http") ? "_blank" : undefined}
                   rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="link-hover"
